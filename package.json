@@ -1,0 +1,23 @@
+{
+  "name": "Video Admin",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unfoldstore/DudowFlix-Videos-Admin.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/unfoldstore/DudowFlix-Videos-Admin/issues"
+  },
+  "homepage": "https://github.com/unfoldstore/DudowFlix-Videos-Admin#readme",
+  "description": "",
+  "devDependencies": {
+    "typescript": "^5.8.2"
+  }
+}
