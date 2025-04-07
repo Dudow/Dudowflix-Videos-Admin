@@ -28,6 +28,11 @@ describe('Category Unit Tests', () => {
 })
 
 describe("Create and change commands", () => {
+
+    let validateSpy: any;
+    beforeEach(() => {
+        validateSpy = jest.spyOn(Category, "validate");
+    })
     test("Should create a new category", () => {
         const category = Category.create({
             name: "Movie",
@@ -37,6 +42,8 @@ describe("Create and change commands", () => {
         expect(category.description).toBeNull();
         expect(category.is_active).toBe(true);
         expect(category.created_at).toBeInstanceOf(Date);
+
+        expect(validateSpy).toHaveBeenCalledTimes(1);
     })
 
     test("Should create a new category and change name", () => {
