@@ -1,3 +1,4 @@
+import { EntityValidationError } from "../../../shared/domain/validators/validation.error";
 import { Uuid } from "../../../shared/domain/value-objects/uuid.vo";
 import { Category } from "../category.entity";
 
@@ -101,5 +102,17 @@ describe("category_id field", () => {
         if(category_id instanceof Uuid){
             expect(category.category_id.id).toBe(category_id.id);
         }
+    })
+})
+
+describe("category validation", () => {
+    test("Should create an invalid category with name property", () => {
+        expect(() => Category.create({name: null})).containsErrorMessages({
+            name: [
+                "name should not be empty",
+                "name must be a string",
+                "name must be shorter than or equal to 255 characters",
+            ]
+        })
     })
 })
